@@ -1,0 +1,125 @@
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #f1f1f1, #f7f7f7);
+  color: #4b5320;
+  text-align: center;
+  padding: 20px;
+  margin: 0;
+  position: relative;
+}
+
+h1,
+p {
+  margin-bottom: 20px;
+}
+
+/* Centered position for initial button */
+#trackButton {
+  padding: 12px 24px;
+  font-size: 16px;
+  background-color: #8c9d57;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  position: absolute;
+  transition: all 0.3s ease;
+  left: 5%;
+  top: 5%;
+  transform: translate(-50%, -50%); /* Centering it initially */
+}
+
+/* Default hover effect when music is OFF */
+#trackButton:not(.moving):hover {
+  left: calc(100% - 200px); /* Moves to the right */
+  top: calc(100% - 100px); /* Moves downward */
+}
+
+/* Centering the color circles */
+#colorContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+/* Centering the Clear Colors Button */
+#clearButton {
+  display: block;
+  margin: 10px auto;
+  padding: 12px 24px;
+  font-size: 16px;
+  background-color: #8c9d57;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  position: absolute;
+  transition: all 0.3s ease;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Style for the color circle */
+.color-circle {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin: 10px;
+  display: inline-block;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.color-circle:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Specific colors for each circle */
+#redColor {
+  background-color: #e74c3c;
+}
+#yellowColor {
+  background-color: #f1c40f;
+}
+#blueColor {
+  background-color: #3498db;
+}
+
+/* Style for the color display */
+#colorDisplay {
+  width: 200px;
+  height: 200px;
+  border: 1px solid black;
+  background-color: rgb(0, 0, 0);
+  margin: 20px auto;
+}
+
+/* Style for the volume slider */
+#slider {
+  width: 80%;
+  max-width: 300px;
+}
+
+/* Style for the volume percentage text */
+#volumePercentage {
+  font-size: 18px;
+}
+
+/* Falling text animation */
+.falling-text {
+  position: absolute;
+  font-size: 24px;
+  animation: fall 2s linear forwards;
+}
+
+@keyframes fall {
+  from {
+    opacity: 1;
+  }
+  to {
+    top: 90vh; /* Falls to near the bottom */
+    opacity: 0;
+  }
+}
